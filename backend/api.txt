@@ -1,0 +1,88 @@
+http://localhost:5000
+
+1...../api/auth/register
+Body (JSON):
+
+{
+  "username": "komal",
+  "email": "komal@example.com",
+  "password": "123456"
+}
+
+2.POST /api/auth/admin/register
+Body (JSON):
+
+{
+  "username": "admin",
+  "email": "admin@example.com",
+  "password": "123456"
+}
+
+3. Login (User/Admin)
+
+POST /api/auth/login
+Body (JSON):
+
+{
+  "email": "komal@example.com",
+  "password": "123456"
+}
+
+🍬 Sweet APIs (/api/sweets)
+1. Create Sweet (Admin only)
+
+POST /api/sweets
+Body (JSON):
+
+{
+  "name": "Rasgulla",
+  "category": "Bengali",
+  "price": 120,
+  "quantity": 50,
+  "img": "https://example.com/rasgulla.jpg"
+}
+
+2. Get All Sweets
+
+GET /api/sweets
+
+Response example:
+
+[
+  {
+    "_id": "68cd7a6320dce54c230040f6",
+    "name": "Rasgulla",
+    "category": "Bengali",
+    "price": 120,
+    "quantity": 50,
+    "img": "https://example.com/rasgulla.jpg"
+  }
+]
+
+3. Get Single Sweet by ID
+
+GET /api/sweets/:id
+
+4. Update Sweet (Admin only)
+
+PUT /api/sweets/:id
+Body (JSON):
+
+{
+  "name": "Rasgulla",
+  "price": 150,
+  "quantity": 40
+}
+
+5. Delete Sweet (Admin only)
+
+DELETE /api/sweets/:id
+
+6. Purchase Sweet (Reduce Quantity)
+
+POST /api/sweets/:id/purchase
+Body (JSON):
+
+{
+  "quantity": 2
+}
