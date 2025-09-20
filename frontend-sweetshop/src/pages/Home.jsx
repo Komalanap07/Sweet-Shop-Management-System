@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../api";
 import SweetCard from "../components/SweetCard";
-import Carousel from "../components/Carousel";
 
 export default function Home() {
   const [sweets, setSweets] = useState([]);
